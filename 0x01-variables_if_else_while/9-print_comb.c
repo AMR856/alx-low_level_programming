@@ -9,12 +9,16 @@
 
 int main(void)
 {
-	char c;
+	int c;
 
-	c = '0';
-	while (c <= '9')
+	c = 0;
+	while (c <= 9)
 	{
-		putchar(c);
+		putchar(c + '0');
+		if (c == 9)
+		{
+			break;
+		}
 		putchar(',');
 		putchar(' ');
 		c = c + 1;
