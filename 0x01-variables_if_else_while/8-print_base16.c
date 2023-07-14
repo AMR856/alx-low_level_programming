@@ -9,7 +9,7 @@
 
 int main(void)
 {
-	char digit,letters;
+	char digit, letters;
 
 	digit = '0';
 	letters = 'a';
