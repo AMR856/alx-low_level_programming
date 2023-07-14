@@ -2,18 +2,18 @@
 /**
  * main - entry point
  * Description: A C program that prints the number from
- * 0 to 9 using putchar and some chars mainpulation
+ * 0 to 9 using putchar and some int mainpulation
  * Return: Always returns 0 (Success)
 */
 int main(void)
 {
-	char c;
+	int num;
 
-	c = '0';
-	while (c <= '9')
+	num = 0;
+	while (num <= 9)
 	{
-		putchar(c);
-		c = c + 1;
+		putchar(num);
+		num = num + 1;
 	}
 	putchar('\n');
 	return (0);
