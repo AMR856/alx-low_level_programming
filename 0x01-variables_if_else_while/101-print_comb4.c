@@ -13,9 +13,9 @@ int main(void)
 
 	for (i = 0; i < 10; i++)
 	{
-		for (j = 0; j < 10; j++)
+		for (j = i +1 ; j < 10; j++)
 		{
-			for (k = 0; k < 10; k++)
+			for (k = j +1 ; k < 10; k++)
 			{
 				putchar(i + '0');
 				putchar(j +'0');
