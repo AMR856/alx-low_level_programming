@@ -12,10 +12,10 @@ void times_table(void)
 	int num, multi, product;
 
 	for (num = 0; num <= 9; num++)
-	{
+	{	
+		_putchar('0');
 		for (multi = 1; multi <= 9; multi++)
 		{
-			_putchar('0');
 			_putchar(',');
 			_putchar(' ');
 			product = multi * num;
