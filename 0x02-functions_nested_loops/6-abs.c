@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _abs: A function that returns the abs value of an integer
+ * _abs -  A function that returns the abs value of an integer
  * @r: The number that we want its absolute value
  * Description: This function checks if the number is bigger than
  * zero or smaller and if it is smaller than it multiplies it by -1
