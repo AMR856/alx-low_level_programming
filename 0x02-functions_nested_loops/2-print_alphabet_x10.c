@@ -20,6 +20,7 @@ void print_alphabet_x10(void)
 			_putchar(c);
 			c = c + 1;
 		}
+		counter = counter + 1;
 		_putchar('\n');
 		c = 'a';
 	}
