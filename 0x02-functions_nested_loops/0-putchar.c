@@ -11,7 +11,7 @@
  * that was printed to the standard output
 */
 
-int main(void)
+int _putchar(char c)
 {
-	return (write(1, &char, 1));
+	return (write(1, &c, 1));
 }
