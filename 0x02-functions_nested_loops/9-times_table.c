@@ -9,32 +9,27 @@
 
 void times_table(void)
 {
-	int firstDigit, secondDigit;
+	int num, multi, product;
 
-	for (firstDigit = 0; firstDigit <= 9; firstDigit++)
+	for (num = 0; num <= 9; num++)
 	{
-		for (secondDigit = 0; secondDigit <= 9; secondDigit++)
+		for (multi = 1; multi <= 9; multi++)
 		{
-			if ((firstDigit * secondDigit) / 10 == 0)
+			_putchar('0');
+			_putchar(',');
+			_putchar(' ');
+			prodcut = multi * num;
+
+			if (product <= 9)
 			{
-				if (secondDigit == 0)
-				{
-				}
-				else
-				{
-					_putchar(' ');
-				}
+				_putchar(' ');
 			}
 			else
 			{
-				putchar((firstDigit * secondDigit) % 10 + '0');
+				_putchar((product / 10) + '0');
 			}
-			_putchar((firstDigit * secondDigit) % 10 + '0');
-			if (secondDigit == 9)
-				break;
+			_putchar((product % 10) + '0');
 
-			_putchar(',');
-			_putchar(' ');
 		}
 		_putchar('\n');
 	}
