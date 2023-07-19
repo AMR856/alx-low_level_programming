@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
- * print_multiple - A function that prints the multiple of 3
- * and 5 below 1024 and sums them up
+ * main - entry point
  * Description: This function uses a for loop and condition using mod operator
  * to check for the required condition
+ * Return: Always returns 0 (Success)
 */
 
-void print_multiple(void)
+int main(void)
 {
 	int theLimit = 1024;
 	int sum = 0, i;
@@ -18,4 +18,5 @@ void print_multiple(void)
 			sum = sum + i;
 	}
 	printf("%d", sum);
+	return (0);
 }
