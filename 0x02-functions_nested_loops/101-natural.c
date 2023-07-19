@@ -10,9 +10,9 @@
 void print_multiple(void)
 {
 	int theLimit = 1024;
-	int sum = 0;
+	int sum = 0, i;
 
-	for (int i = 0; i < theLimit; i++)
+	for (i = 0; i < theLimit; i++)
 	{
 		if (i % 3 == 0 || i % 5 == 0)
 			sum = sum + i;
