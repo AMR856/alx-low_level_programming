@@ -19,7 +19,7 @@ int main(void)
 		term2 = sum;
 		printf("%lu", sum);
 
-		if (counter == 50)
+		if (counter == 49)
 		{
 			printf("\n");
 		}
