@@ -17,7 +17,7 @@ int main(void)
 		sum = term1 + term2;
 		term1 = term2;
 		term2 = sum;
-		printf("lu", sum);
+		printf("%lu", sum);
 
 		if (counter <= 50)
 		{
