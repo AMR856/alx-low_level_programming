@@ -12,7 +12,7 @@ void print_times_table(int n)
 	int num,  multi, prod;
 
 	if (n > 15)
-		break;
+		return;
 	for (num = 0; num <= n; num++)
 	{
 		_putchar('0');
