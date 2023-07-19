@@ -39,7 +39,7 @@ int main(void)
 	while (i <= 98)
 	{
 		if (f1o > 0)
-			printf("lu", f1o);
+			printf("%lu", f1o);
 		initials0s = numLength(mx) - 1 - numLength(f1);
 		while (f1o > 0 && initials0s > 0)
 		{
