@@ -21,6 +21,6 @@ int main(void)
 		term1 = term2;
 		term2 = sum;
 	}
-	printf("%lu\n", evenSum);
+	printf("%u\n", evenSum);
 	return (0);
 }
