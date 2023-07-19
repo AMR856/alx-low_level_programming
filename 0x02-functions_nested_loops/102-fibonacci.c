@@ -12,14 +12,14 @@ int main(void)
 	int counter;
 	unsigned long term1 = 0, term2 = 1, sum;
 
-	for (counter = 1; counter < 50; counter++)
+	for (counter = 0; counter < 50; counter++)
 	{
 		sum = term1 + term2;
 		term1 = term2;
 		term2 = sum;
 		printf("%lu", sum);
 
-		if (counter <= 50)
+		if (counter == 50)
 		{
 			printf("\n");
 		}
