@@ -5,7 +5,9 @@
  * except 2 and 4
  * Description: This function prints the numbers using a for loop
  * and it excepts 2 and 4 using an if condition
+ * Return: Always 0 (Success)
 */
+
 void print_most_numbers(void)
 {
 	int num;
