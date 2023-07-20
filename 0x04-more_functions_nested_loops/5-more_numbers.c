@@ -1,7 +1,12 @@
 #include "main.h"
+
 /**
- * more_numbers - ِA function that prints the numbers from 0 to 14
- * */
+ * more_numbers - ِ function that prints the numbers from 0 to 14
+ * Description: This function can prints numbers from 0 to 14
+ * 10 times using two for loops and a simple if condition
+ * ٌReturn: It returns void (Nothing)
+*/
+
 void more_numbers(void)
 {
 	int i, j;
