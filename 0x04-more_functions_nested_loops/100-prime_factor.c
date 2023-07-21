@@ -30,9 +30,9 @@ double _sqrt(double a)
  * Return: It returns void (Nothing)
 */
 
-void largest_prime_number(long long int n)
+void largest_prime_number(long int n)
 {
-	long long maxPrime = -1;
+	long int maxPrime = -1;
 	int i;
 
 	while (n % 2 == 0)
@@ -50,9 +50,9 @@ void largest_prime_number(long long int n)
 	}
 	if (n > 2)
 	{
-		largest = n;
+		maxPrime = n;
 	}
-	printf("%llu\n", largest);
+	printf("%ld\n", maxPrime);
 }
 
 /**
