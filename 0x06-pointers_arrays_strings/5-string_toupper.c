@@ -55,7 +55,7 @@ int _strlen(char *s)
 /**
  * string_toupper - A function that converts lowercase letters to uppercase
  * @src: The string to be converted
- * Description: This function converts a lowercase letter to uppercase 
+ * Description: This function converts a lowercase letter to uppercase
  * by subtracting 32
  * Return: Retruns a pointer to string that contains uppercase letters
 */
@@ -67,14 +67,15 @@ char *string_toupper(char *src)
 	char s[1000000];
 
 	strLength = _strlen(src);
-	
-	for(i = 0; i <strLength; i++)
+
+	for (i = 0; i < strLength; i++)
 	{
 		if (src[i] >= 'a' && src[i] <= 'z')
 		{
 			src[i] = src[i] - 32;
 		}
 	}
-	ptr = _strcpy(s,src);
+	ptr = _strcpy(s, src);
 	return (ptr);
 }
+
