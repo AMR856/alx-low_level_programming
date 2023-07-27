@@ -15,22 +15,14 @@
 
 char *_strncpy(char *dest, char *src, int n)
 {
-	char *resultPtr;
+	int i;
 
-	resultPtr = dest;
-	if (dest == NULL || src == NULL)
-		return (NULL);
-	while (*src != '\0' && n > 0)
+	for (i = 0; i < n && src[i] != '\0'; i++)
+		dest[i] = src[i];
+	while (i < n)
 	{
-		*dest = *src;
-		dest++;
-		src++;
-		n = n - 1;
+		dest[i] = '\0';
+		i = i + 1;
 	}
-	while (n > 0)
-	{
-		*dest = '\0';
-		n = n - 1;
-	}
-	return (resultPtr);
+	return (dest);
 }
