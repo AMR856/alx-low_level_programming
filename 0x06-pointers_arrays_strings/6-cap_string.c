@@ -1,3 +1,17 @@
+#include "main.h"
+
+/**
+ * cap_string - A function that converts the starting
+ * of each word to capital letter
+ * @myString: The string that we have to convert its
+ * words starting
+ * Description: This function loops through each letter and
+ * tries do check some if conditions to solve the required problem
+ * Return: It returns a poniter to the same last string but
+ * with its edit
+*/
+
+
 char *cap_string(char *myString)
 {
 	int index = 0;
