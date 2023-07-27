@@ -43,8 +43,8 @@ char *leet(char *myString)
 	{
 		for (j = 0; j < 10; j++)
 		{
-			if (cp[i] == cp[j])
-				cp[i] = cp[j];
+			if (cp[i] == mySecondArray[j])
+				cp[i] = myFirstArray[j];
 		}
 	}
 	return (cp);
