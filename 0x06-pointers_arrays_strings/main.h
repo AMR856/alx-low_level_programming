@@ -8,6 +8,6 @@ int _strcmp(char *X, char *Y);
 char *string_toupper(char *);
 void reverse_array(int *a, int n);
 char *cap_string(char *myString);
-char *leet(char *);
+char *leet(char *myString);
 
 #endif
