@@ -33,6 +33,7 @@ int _strlen(char *s)
 
 char *leet(char *myString)
 {
+	char *cp = myString;
 	char myFirstArray[] = {'4', '4', '3', '3', '0', '0', '7', '7', '1', '1'};
 	char mySecondArray[] = {'a', 'A', 'e', 'E', 'o', 'O', 't', 'T', 'l', 'L'};
 	int strLength, i, j;
@@ -42,9 +43,9 @@ char *leet(char *myString)
 	{
 		for (j = 0; j < 10; j++)
 		{
-			if (myString[i] == mySecondArray[j])
-				myString[i] = myFirstArray[j];
+			if (cp[i] == cp[j])
+				cp[i] = cp[j];
 		}
 	}
-	return (myString);
+	return (cp);
 }
