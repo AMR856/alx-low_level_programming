@@ -21,8 +21,10 @@ char *rot13(char *myString)
 		for (i = 0; i < sizeof(l1) / sizeof(char); i++)
 		{
 			if (*myString == l1[i])
+			{
 				*myString = l2[i];
 				break;
+			}
 		}
 		myString = myString + 1;
 	}
