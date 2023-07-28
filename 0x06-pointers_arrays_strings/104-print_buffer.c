@@ -5,6 +5,7 @@
 /**
  * isPrintable - A function to check if the char can be printed
  * @myChar: The char to be checked
+ * Description: Nothing
  * Return: It returns a boolean true
  * if it is a printable char and
  * false if it is not
@@ -20,11 +21,12 @@ bool isPrintable(int myChar)
 
 
 /**
- * printAscii - A fucntion to print the Hex
+ * printHex - A fucntion to print the Hex
  * chars in the buffer
  * @b: A pointer to the buffer
  * @start: The beginning of printing of Hex values
  * @end: The end of printing of Hex values
+ * Description: Nothing
  * Return: It returns void (Nothing)
 */
 
@@ -51,7 +53,7 @@ void printHex(char *b, int start, int end)
  * chars in the buffer
  * @b: A pointer to the buffer
  * @start: The beginning of printing of ASCII values
- * @end: The end of printing of ASCII values
+ * Description: Nothing
  * Return: It returns void (Nothing)
 */
 
@@ -74,6 +76,7 @@ void printAscii(char *b, int start)
  * print_buffer - A function to prints a buffer
  * @b: A pointer to the buffer
  * @size: The size of the buffer
+ * Description: Nothing
  * Return: It returns void (Nothing)
 */
 
