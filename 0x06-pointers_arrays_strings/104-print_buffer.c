@@ -53,15 +53,16 @@ void printHex(char *b, int start, int end)
  * chars in the buffer
  * @b: A pointer to the buffer
  * @start: The beginning of printing of ASCII values
+ * @end: The end of ASCII values
  * Description: Nothing
  * Return: It returns void (Nothing)
 */
 
-void printAscii(char *b, int start)
+void printAscii(char *b, int start, int end)
 {
 	int i = 0, myChar;
 
-	while (i < 10)
+	while (i < end)
 	{
 		myChar = b[i + start];
 		if (isPrintable(myChar))
@@ -94,7 +95,7 @@ void print_buffer(char *b, int size)
 				end = size - start;
 			printf("%08x: ", start);
 			printHex(b, start, end);
-			printAscii(b, start);
+			printAscii(b, start, end);
 			printf("\n");
 		}
 	}
