@@ -1,28 +1,7 @@
 #include "main.h"
+#include <string.h>
 
 int check_palindrome(char*, int, int);
-/**
- * _strlen - A function to get the length of string
- * @s: The pointer to the string
- * Description: This function loops through
- * the string until it finds a null termintor and
- * in each char that is not a null it increments the
- * counter by 1
- * Return: The length of the string
-*/
-
-int _strlen(char *s)
-{
-	int counter;
-
-	counter = 0;
-	while (*s != '\0')
-	{
-		s++;
-		counter++;
-	}
-	return (counter);
-}
 
 /**
  * is_palindrome - A function that checks if a string is palindrome
@@ -35,7 +14,7 @@ int is_palindrome(char *s)
 {
 	int strLength;
 
-	strLength = _strlen(s);
+	strLength = strlen(s);
 	return (check_palindrome(s, 0, strLength - 1));
 }
 
