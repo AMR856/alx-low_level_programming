@@ -19,7 +19,7 @@ int is_palindrome(char *s)
 }
 
 /**
- * A functino to checks if the string is
+ * check_palindrome - A function to checks if the string is
  * palindrome using recursion
  * @s: The string to be checked
  * @left: The left index of the start
