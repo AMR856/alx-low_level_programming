@@ -17,12 +17,12 @@ int main(int argc, char **argv)
 	size_t j;
 
 	sum = 0;
-	if (argc <= 1)
+	if (argc == 1)
 	{
 		printf("0\n");
-		return (EXIT_FAILURE);
+		return (0);
 	}
-	else if (argc >= 1)
+	else if (argc > 1)
 	{
 		for (i = 1; i < argc; i++)
 		{
@@ -38,6 +38,8 @@ int main(int argc, char **argv)
 
 		}
 	}
+	(void)argc;
+	(void)argv;
 	printf("%d\n", sum);
-	return (EXIT_SUCCESS);
+	return (0);
 }
