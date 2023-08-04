@@ -12,5 +12,6 @@
 int main(int args, char **argv)
 {
 	printf("%d\n", args);
+	(void)args;
 	return (EXIT_SUCCESS);
 }
