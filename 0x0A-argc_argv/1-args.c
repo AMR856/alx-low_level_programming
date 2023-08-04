@@ -13,5 +13,6 @@ int main(int args, char **argv)
 {
 	printf("%d\n", args - 1);
 	(void)args;
+	(void)argv;
 	return (EXIT_SUCCESS);
 }
