@@ -27,7 +27,13 @@ char *str_concat(char *s1, char *s2)
 			strcat(newArray, "");
 			return (newArray);
 		}
-		else 
+		else if (s1 == NULL && s2 == NULL)
+		{
+			strcpy(newArray, "");
+			strcat(newArray, "");
+			return (newArray);
+		}
+		else
 		{
 			strcpy(newArray, s1);
 			strcat(newArray, s2);
