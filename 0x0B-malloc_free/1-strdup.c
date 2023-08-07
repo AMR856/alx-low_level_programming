@@ -17,7 +17,7 @@ char *_strdup(char *str)
 
 	if (str != NULL)
 	{
-		char *newArray = (char *)malloc(strlen(str) * sizeof(char));
+		char *newArray = (char *)malloc(strlen(str) * sizeof(char) + 1);
 
 		if (newArray == NULL)
 		{
