@@ -35,16 +35,8 @@ char *argstostr(int ac, char **av)
 			strcat(result, "\n");
 			for (i = 1; i < ac; i++)
 			{
-				if (i == ac - 1)
-				{
-					strcat(result, av[i]);
-					strcat(result, "\n");
-				}
-				else
-				{
-					strcat(result, av[i]);
-					strcat(result, "\n");
-				}
+				strcat(result, av[i]);
+				strcat(result, "\n");
 			}
 		}
 		return (result);
