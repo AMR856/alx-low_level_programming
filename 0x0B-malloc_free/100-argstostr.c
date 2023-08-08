@@ -22,7 +22,7 @@ char *argstostr(int ac, char **av)
 	else
 	{
 		for (i = 0; i < ac; i++)
-			totalLen = totalLen + strlen(av[i]);
+			totalLen = totalLen + strlen(av[i]) + 1;
 		result = (char *)malloc(totalLen * sizeof(char) + 1);
 
 		if (result == NULL)
