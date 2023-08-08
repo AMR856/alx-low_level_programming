@@ -38,6 +38,7 @@ char *argstostr(int ac, char **av)
 				if (i == ac - 1)
 				{
 					strcat(result, av[i]);
+					strcat(result, "\n");
 				}
 				else
 				{
