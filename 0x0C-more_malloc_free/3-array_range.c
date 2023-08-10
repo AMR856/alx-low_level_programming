@@ -17,9 +17,10 @@ int *array_range(int min, int max)
 
 	if (min > max)
 		return (NULL);
-
 	strLen = max - min + 1;
 	ptr = (int *)malloc(strLen * sizeof(int));
+	if (ptr == NULL)
+		return (NULL);
 	counter = 0;
 	i = min;
 	for (counter = 0; counter < strLen; counter++)
