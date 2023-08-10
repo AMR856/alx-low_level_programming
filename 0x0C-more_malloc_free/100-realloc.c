@@ -1,5 +1,6 @@
 #include "main.h"
 #include <string.h>
+
 /**
  * _realloc - A function that is equal to realloc
  * @ptr: Pointer to a previously allocated memory
@@ -24,7 +25,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 
 		return (ptrnew);
 	}
-	if (new_size == 0 && ptr != NULL)
+	if (new_size == 0)
 	{
 		free(ptr);
 		return (NULL);
@@ -33,7 +34,14 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	ptrnew = malloc(new_size);
 	if (ptrnew == NULL)
 		return (NULL);
-
-	memcpy(ptrnew, ptr, old_size);
+	if (old_size > new_size)
+	{
+		memcpy(ptrnew, ptr, new_size);
+	}
+	else
+	{
+		memcpy(ptrnew, ptr, old_size);
+	}
+	free(ptr);
 	return (ptrnew);
 }
