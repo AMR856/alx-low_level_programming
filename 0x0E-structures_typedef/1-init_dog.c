@@ -2,6 +2,7 @@
 
 /**
  * init_dog - A function to initialize variables
+ * @d: Pointer to a variable of type dog
  * @name: The name that we want to use
  * @age: The age that we want to use
  * @owner: The name of the owner that we want to use
