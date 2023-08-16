@@ -33,7 +33,7 @@ int op_sub(int a, int b)
  * @a: The first num
  * @b: The second num
  *
- * Return : The result of mulitpling a and b
+ * Return: The result of mulitpling a and b
 */
 
 int op_mul(int a, int b)
