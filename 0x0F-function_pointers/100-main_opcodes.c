@@ -15,7 +15,9 @@ void printOpCodes(const void *mainAddr, int mySize)
 	char *bytes = (char *)mainAddr;
 
 	for (i = 0; i < mySize; i++)
+	{
 		printf("%.02hhx ", bytes[i]);
+	}
 	printf("\n");
 }
 
@@ -45,9 +47,7 @@ int main(int argc, char **argv)
 		exit(2);
 	}
 
-	void *mainAddr = (void *)&main;
-
-	printOpCodes(mainAddr, numOfBytes);
+	printOpCodes((void *)&main, numOfBytes);
 
 	return (EXIT_SUCCESS);
 }
