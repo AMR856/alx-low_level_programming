@@ -9,13 +9,13 @@
  * Return: It returns void (Nothing)
 */
 
-void printOpCodes(const void *mainAddr, const size_t mySize)
+void printOpCodes(const void *mainAddr, size_t mySize)
 {
 	size_t i;
 	const unsigned char *bytes = (const unsigned char *)mainAddr;
 
 	for (i = 0; i < mySize; i++)
-		printf("%02X ", bytes[i]);
+		printf("%02hhx ", bytes[i]);
 	printf("\n");
 }
 
