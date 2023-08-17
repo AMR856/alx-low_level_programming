@@ -30,7 +30,6 @@ void printOpCodes(const void *mainAddr, size_t mySize)
 int main(int argc, char **argv)
 {
 	int numOfBytes;
-	size_t mySize;
 
 	if (argc != 2)
 	{
@@ -48,9 +47,7 @@ int main(int argc, char **argv)
 
 	void *mainAddr = (void *)&main;
 
-	mySize = (size_t)&&endOfMain - (size_t)mainAddr;
+	printOpCodes(mainAddr, numOfBytes);
 
-	printOpCodes(mainAddr, mySize);
-endOfMain:
 	return (EXIT_SUCCESS);
 }
