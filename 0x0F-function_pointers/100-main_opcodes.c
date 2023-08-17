@@ -32,7 +32,7 @@ int main(int argc, char **argv)
 	int numOfBytes;
 	size_t mySize;
 
-	if (argc != 1)
+	if (argc != 2)
 	{
 		printf("Error\n");
 		exit(1);
