@@ -19,7 +19,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	char *myString;
 
 	va_start(args, n);
-	for (i =0; i < n; i++)
+	for (i = 0; i < n; i++)
 	{
 		myString = va_arg(args, char *);
 		if (myString == NULL)
