@@ -42,9 +42,7 @@ int main(int argc, char **argv)
 	}
 
 	numOfBytes = atoi(argv[1]);
-	
-	if (numOfBytes == 0)
-		return (EXIT_SUCCESS);
+
 	if (numOfBytes < 0)
 	{
 		printf("Error\n");
