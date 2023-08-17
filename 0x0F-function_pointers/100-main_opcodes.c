@@ -12,7 +12,7 @@
 void printOpCodes(const void *mainAddr, size_t mySize)
 {
 	size_t i;
-	const unsigned char *bytes = (const unsiged char *)mainAddr;
+	const unsigned char *bytes = (const unsigned char *)mainAddr;
 
 	for (i = 0; i < mySize; i++)
 	{
