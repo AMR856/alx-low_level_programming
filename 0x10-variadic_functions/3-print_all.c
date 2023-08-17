@@ -16,7 +16,6 @@ void print_all(const char * const format, ...)
 	char *mySep = "";
 
 	va_start(args, format);
-
 	if (format != NULL)
 	{
 		while (format[i])
@@ -41,6 +40,9 @@ void print_all(const char * const format, ...)
 					}
 					printf("%s%s", mySep, str);
 					break;
+				default:
+					i++;
+					continue;
 			}
 			i++;
 			mySep = ", ";
