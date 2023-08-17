@@ -17,7 +17,7 @@ void printOpCodes(const void *mainAddr, size_t mySize)
 	for (i = 0; i < mySize; i++)
 	{
 		printf("%.02hhx", bytes[i]);
-		if (i < mySize -1)
+		if (i < mySize - 1)
 			printf(" ");
 	}
 	printf("\n");
