@@ -32,17 +32,20 @@ int main(int argc, char **argv)
 	int numOfBytes;
 	size_t mySize;
 
-	if (argc != 2)
+	if (argc != 1)
 	{
 		printf("Error\n");
 		exit(1);
 	}
+
 	numOfBytes = atoi(argv[1]);
+
 	if (numOfBytes < 0)
 	{
 		printf("Error\n");
 		exit(2);
 	}
+
 	void *mainAddr = (void *)&main;
 
 	mySize = (size_t)&&endOfMain - (size_t)mainAddr;
