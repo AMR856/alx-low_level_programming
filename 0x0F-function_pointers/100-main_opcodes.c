@@ -9,14 +9,16 @@
  * Return: It returns void (Nothing)
 */
 
-void printOpCodes(const void *mainAddr, int mySize)
+void printOpCodes(const void *mainAddr, size_t mySize)
 {
-	int i;
+	size_t i;
 	char *bytes = (char *)mainAddr;
 
 	for (i = 0; i < mySize; i++)
 	{
-		printf("%.02hhx ", bytes[i]);
+		printf("%.02hhx", bytes[i]);
+		if (i < mySize -1)
+			printf(" ");
 	}
 	printf("\n");
 }
@@ -31,7 +33,7 @@ void printOpCodes(const void *mainAddr, int mySize)
 
 int main(int argc, char **argv)
 {
-	int numOfBytes;
+	size_t numOfBytes;
 
 	if (argc != 2)
 	{
