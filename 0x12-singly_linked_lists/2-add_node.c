@@ -15,7 +15,7 @@
 list_t *add_node(list_t **head, const char *str)
 {
 	list_t *newElement;
-	
+
 	newElement = (list_t *)malloc(sizeof(list_t));
 	if (newElement == NULL)
 		return (NULL);
@@ -23,7 +23,7 @@ list_t *add_node(list_t **head, const char *str)
 	newElement->len = _strlen(str);
 	newElement->next = *head;
 	*head = newElement;
-	return (newElement);	
+	return (newElement);
 }
 
 /**
@@ -37,6 +37,7 @@ int _strlen(const char *myString)
 {
 	int i = 0;
 	const char *theIterator = myString;
+
 	while (*theIterator)
 	{
 		i = i + 1;
