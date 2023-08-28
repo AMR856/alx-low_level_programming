@@ -12,7 +12,7 @@ size_t listint_len(const listint_t *h)
 {
 	int mySize = 0;
 	const listint_t *myPointer;
-	
+
 	myPointer = h;
 	if (h == NULL)
 		return (0);
