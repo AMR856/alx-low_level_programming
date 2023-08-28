@@ -7,6 +7,8 @@
  * at the beginning of the linked list
  * @n: The integer that is going to be stored
  * in the new node
+ *
+ * Return: It returns a pointer to the newly created node
 */
 
 listint_t *add_nodeint(listint_t **head, const int n)
