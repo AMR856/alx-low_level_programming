@@ -3,7 +3,7 @@
 /**
  * sum_listint - A function to get the sum of data in a linked list
  * @head: A pointer to the head of the linked list
- * 
+ *
  * Return: It returns the sum of the data in the linked list
 */
 
