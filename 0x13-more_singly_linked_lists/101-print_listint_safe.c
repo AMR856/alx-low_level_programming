@@ -48,7 +48,7 @@ size_t print_listint_safe(const listint_t *head)
 	{
 		for (i = 0; i < mySize; i++)
 		{
-			if (myList[i] == head)
+			if (myList[i] == head->next)
 			{
 				printf("-> [%p] %d\n", (void *)head, head->next->n);
 				free(myList);
