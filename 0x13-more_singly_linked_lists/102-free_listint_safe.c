@@ -10,7 +10,7 @@
 
 size_t free_listint_safe(listint_t **h)
 {
-	long mydiff = 0;
+	size_t mydiff = 0;
 	int listLength = 0;
 	listint_t *tempNode;
 
