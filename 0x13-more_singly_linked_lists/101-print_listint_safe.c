@@ -1,6 +1,34 @@
 #include "lists.h"
 
 /**
+ * creatingNewList - A function to make a temp array to store
+ * the looped in address
+ * @oldList: The address of the old list before updating
+ * @mySize: The new size of the list
+ * @myNewwAdd: The number to be added into the list
+*/
+
+const listint_t **creatingNewList(const listint_t **oldList, size_t mySize, const listint_t *myNewadd)
+{
+	const listint_t **myNewList;
+	size_t i;
+
+	myNewList = malloc(sizeof(listint_t *) * mySize);
+	if (myNewList == NULL)
+	{
+		free(myNewList);
+		exit(98);
+	}
+	for (i = 0; i < mySize - 1; i++)
+	{
+		myNewList[i] = oldList[i];
+	}
+	myNewList[i] = myNewadd;
+	free(oldList);
+	return (myNewList);
+}
+
+/**
  * print_listint_safe - A function to print a linked list in
  * a safe manner
  * @head: A pointer that points to the head of the linked
@@ -11,29 +39,25 @@
 
 size_t print_listint_safe(const listint_t *head)
 {
-	const listint_t *currentNode;
-	size_t counter = 0;
-	long int myDiff;
+	size_t i, mySize = 0;
+	const listint_t **myList = NULL;
 
-	if (head == NULL)
+	while (head != NULL)
 	{
-		exit(98);
-	}
-	currentNode = head;
-	while (currentNode != NULL)
-	{
-		myDiff = currentNode - currentNode->next;
-		counter = counter + 1;
-		printf("[%p] %d\n", (void *)currentNode, currentNode->n);
-		if (myDiff > 0)
+		for (i = 0; i < mySize; i++)
 		{
-			currentNode = currentNode->next;
+			if (myList[i] == head)
+			{
+				printf("-> [%p] %d\n", (void *)head, head->next->n);
+				free(myList);
+				return (mySize);
+			}
 		}
-		else
-		{
-			printf("-> [%p] %d\n", (void *)head->next, head->next->n);
-			break;
-		}
+		mySize = mySize + 1;
+		myList = creatingNewList(myList, mySize, head);
+		printf("[%p] %d\n",(void *)head, head->n);
+		head = head->next;
 	}
-	return (counter);
+	free(myList);
+	return (mySize);
 }
