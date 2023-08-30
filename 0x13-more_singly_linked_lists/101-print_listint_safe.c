@@ -55,7 +55,7 @@ size_t print_listint_safe(const listint_t *head)
 				return (mySize);
 			}
 		}
-		mySize = mySize + 1;
+		mySize++;
 		myList = new(myList, mySize, head);
 		printf("[%p] %d\n", (void *)head, head->n);
 		head = head->next;
