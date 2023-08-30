@@ -22,11 +22,13 @@ size_t free_listint_safe(listint_t **h)
 		if (mydiff > 0)
 		{
 			tempNode = (*h)->next;
+			free(*h);
 			*h = tempNode;
 			listLength++;
 		}
 		else
 		{
+			free(*h);
 			*h = NULL;
 			listLength++;
 			break;
