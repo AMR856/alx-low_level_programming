@@ -1,30 +1,32 @@
 #include "lists.h"
 
 /**
- * creatingNewList - A function to make a temp array to store
+ * new - A function to make a temp array to store
  * the looped in address
- * @oldList: The address of the old list before updating
- * @mySize: The new size of the list
- * @myNewwAdd: The number to be added into the list
+ * @oL: The address of the old list before updating
+ * @myS: The new size of the list
+ * @myN: The number to be added into the list
+ *
+ * Return: Nothing
 */
 
-const listint_t **creatingNewList(const listint_t **oldList, size_t mySize, const listint_t *myNewadd)
+const listint_t **new(const listint_t **oL, size_t myS, const listint_t *myN)
 {
 	const listint_t **myNewList;
 	size_t i;
 
-	myNewList = malloc(sizeof(listint_t *) * mySize);
+	myNewList = malloc(sizeof(listint_t *) * myS);
 	if (myNewList == NULL)
 	{
 		free(myNewList);
 		exit(98);
 	}
-	for (i = 0; i < mySize - 1; i++)
+	for (i = 0; i < myS - 1; i++)
 	{
-		myNewList[i] = oldList[i];
+		myNewList[i] = oL[i];
 	}
-	myNewList[i] = myNewadd;
-	free(oldList);
+	myNewList[i] = myN;
+	free(oL);
 	return (myNewList);
 }
 
@@ -54,8 +56,8 @@ size_t print_listint_safe(const listint_t *head)
 			}
 		}
 		mySize = mySize + 1;
-		myList = creatingNewList(myList, mySize, head);
-		printf("[%p] %d\n",(void *)head, head->n);
+		myList = new(myList, mySize, head);
+		printf("[%p] %d\n", (void *)head, head->n);
 		head = head->next;
 	}
 	free(myList);
