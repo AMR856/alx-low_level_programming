@@ -64,7 +64,7 @@ void writtingBetween(const char *firstFile, const char *secondFile)
 	firstD = open(firstFile, O_RDONLY);
 	if (firstD < 0)
 		printingErrors(98, "Error: Can't read from file ", firstFile);
-	secondD = open(secondFile, 0664);
+	secondD = open(secondFile, O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (secondD < 0)
 		printingErrors(99, "Error: Can't write to ", secondFile);
 	while ((bytesRead = read(firstD, myBuffer, MY_BUFFER_SIZE)) > 0)
