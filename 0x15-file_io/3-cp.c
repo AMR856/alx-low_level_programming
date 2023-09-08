@@ -7,77 +7,76 @@
 #include <string.h>
 
 #define MY_BUFFER_SIZE 1024
-#define ERROR97 "Usage: cp file_from file_to"
-#define ERROR98 "Error: Can't read from file "
-#define ERROR99 "Error: Can't write to "
-#define ERROR100 "Error: Can't close fd "
+void printingErrors(int, const char *, const char *);
+void writtingBetween(const char *, const char *);
 
-void printmyError(const char *, const char *);
-void closingFiles(int *);
-void writtingBetweenFiles(int *, int *, char *, const char *, const char *, char *);
+/**
+ * main - entry point
+ * @argc: The number of parameters
+ * @argv: Pointer to the string that are inputed on the shell
+ *
+ * Return: many things
+*/
 
-int main(int argc, char** argv)
+int main(int argc, char **argv)
 {
-	int myFileD1, myFileD2;
-	char *myBuffer[MY_BUFFER_SIZE];
-	const char *fromFile;
-	const char *toFile;
+	char *fromFile, *toFile;
+
 	if (argc != 3)
 	{
-		printmyError(ERROR97, "");
-		exit(97);
+		printingErrors(97, "Usage: cp file_from file_to", "");
 	}
 	fromFile = argv[1];
 	toFile = argv[2];
-
-	myFileD1 = open(fromFile, O_RDONLY);
-	if (myFileD1 < 0)
-	{
-		printmyError(ERROR98, fromFile);
-		exit(98);		
-	}
-	myFileD2 = open(toFile, 0664);
-	if (myFileD2 < 0)
-	{
-		printmyError(ERROR99, itoa(myFileD2));
-		exit(99);
-	}
-	writtingBetweenFiles(myFileD1, myFileD2, myBuffer, fromFile, toFile);
-	closingFiles(&myFileD1);
-	closingFiles(&myFileD2);
+	writtingBetween(fromFile, toFile);
 	return (0);
 }
 
-void printmyError(const char *myMessage, const char *theParameter)
+/**
+ * printingErrors - A function to print errors and exit
+ * @myError: The number of the errro
+ * @myMes: A pointer to the message to printed
+ * @myString: The name of the files (SometimesUsed)
+ *
+ * Return: Nothing
+*/
+
+void printingErrors(int myError, const char *myMes, const char *myString)
 {
-	dprintf(STDERR_FILENO, "%s%s\n", myMessage, theParameter); 
+	dprintf(STDERR_FILENO, "%s%s\n", myMes, myString);
+	exit(myError);
 }
 
-void closingFiles(int *myD)
-{
-	if (close(*myD) < 0)
-	{
-		printmyError(ERROR100,(char *)myD);
-		exit(100);
-	}
-}
+/**
+ * writtingBetween - A function that is used to copy contents
+ * @firstFile: A pointer to the name of the first file
+ * @secondFile: A pointer to the name of the second file
+ *
+ * Return: Nothing
+*/
 
-void writtingBetweenFiles(int *f, int *s, char *myB, const char *one, const char *two)
+void writtingBetween(const char *firstFile, const char *secondFile)
 {
+	char myBuffer[MY_BUFFER_SIZE];
 	ssize_t bytesRead, bytesWritten;
-	while ((bytesRead = read(*f, myB, MY_BUFFER_SIZE)) < 0)
+	int firstD, secondD;
+
+	firstD = open(firstFile, O_RDONLY);
+	if (firstD < 0)
+		printingErrors(98, "Error: Can't read from file ", firstFile);
+	secondD = open(secondFile, 0664);
+	if (secondD < 0)
+		printingErrors(99, "Error: Can't write to ", secondFile);
+	while ((bytesRead = read(firstD, myBuffer, MY_BUFFER_SIZE)) > 0)
 	{
-		bytesWritten = write(*s, myB, bytesRead);
+		bytesWritten = write(secondD, myBuffer, bytesRead);
 		if (bytesWritten < 0)
-		{
-			printmyError(ERROR99, two);
-			exit(99);
-		}
+			printingErrors(99, "Error: Can't write to ", secondFile);
 	}
 	if (bytesRead < 0)
-	{
-		printmyError(ERROR98, itoa(f));
-		exit (98);
-	}
-	(void)one;
+		printingErrors(98, "Error: Can't read from file ", firstFile);
+	if (close(firstD) < 0)
+		printingErrors(100, "Error: Can't close fd ", firstFile);
+	if (close(secondD) < 0)
+		printingErrors(100, "Error: Can't close fd ", secondFile);
 }
