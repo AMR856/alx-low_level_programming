@@ -35,7 +35,7 @@ int main(int argc, char **argv)
 		exit(98);
 	}
 	myFileD = open(argv[1], O_RDONLY);
-	if (myFileD < 0)
+	if (myFileD == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read file %s\n", argv[1]);
 		exit(98);
@@ -48,7 +48,7 @@ int main(int argc, char **argv)
 		exit(98);
 	}
 	copyVar = read(myFileD, myHeader, sizeof(Elf64_Ehdr));
-	if (copyVar < 0)
+	if (copyVar == -1)
 	{
 		free(myHeader);
 		close(myFileD);
@@ -87,9 +87,9 @@ void checkingElf(unsigned char *e_ident)
 
 	for (i = 0; i < 4; i++)
 	{
-		if ((*e_ident + i) != 127 && (*e_ident + i) != 'E' &&
-				(*e_ident + i) != 'L' &&
-				(*e_ident + i) != 'F')
+		if (*(e_ident + i) != 127 && *(e_ident + i) != 'E' &&
+				*(e_ident + i) != 'L' &&
+				*(e_ident + i) != 'F')
 		{
 			dprintf(STDERR_FILENO, "Error: Not ELF file\n");
 			exit(98);
@@ -203,6 +203,7 @@ void printingVersion(unsigned char *e_ident)
 
 void printingApi(unsigned char *e_ident)
 {
+	printf("  OS/ABI:                            ");
 	switch (e_ident[EI_OSABI])
 	{
 		case ELFOSABI_NONE:
@@ -266,6 +267,7 @@ void printingType(unsigned int e_type, unsigned char *e_ident)
 {
 	if (e_ident[EI_DATA] == ELFDATA2MSB)
 		e_type = e_type >> 8;
+	printf("  Type:                              ");
 	switch (e_type)
 	{
 		case ET_NONE:
