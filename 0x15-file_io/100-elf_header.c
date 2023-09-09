@@ -63,7 +63,7 @@ int main(int argc, char **argv)
 	printingApi((*myHeader).e_ident);
 	printingReadApi((*myHeader).e_ident);
 	printingType((*myHeader).e_type, (*myHeader).e_ident);
-	printingEntry((*myHeader).e_type, (*myHeader).e_ident);
+	printingEntry((*myHeader).e_entry, (*myHeader).e_ident);
 	if (close(myFileD) < 0)
 	{
 		dprintf(STDERR_FILENO, "Error can't close fd\n");
