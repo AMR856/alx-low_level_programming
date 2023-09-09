@@ -13,7 +13,7 @@ void printingVersion(unsigned char *);
 void printingApi(unsigned char *);
 void printingReadApi(unsigned char *);
 void printingType(unsigned int, unsigned char *);
-void printingEntry(unsigned int, unsigned char *);
+void printingEntry(unsigned long int, unsigned char *);
 
 /**
  * main - entry point
@@ -298,7 +298,7 @@ void printingType(unsigned int e_type, unsigned char *e_ident)
  * Return: nothing
 */
 
-void printingEntry(unsigned int e_entry, unsigned char *e_ident)
+void printingEntry(unsigned long int e_entry, unsigned char *e_ident)
 {
 	printf("  Entry point address:               ");
 
@@ -309,7 +309,7 @@ void printingEntry(unsigned int e_entry, unsigned char *e_ident)
 		e_entry = (e_entry << 16) | (e_entry >> 16);
 	}
 	if (e_ident[EI_CLASS] == ELFCLASS32)
-		printf("%#x\n", e_entry);
+		printf("%#x\n", (unsigned long)e_entry);
 	else
-		printf("%#lx\n", (unsigned long int)e_entry);
+		printf("%#lx\n", e_entry);
 }
