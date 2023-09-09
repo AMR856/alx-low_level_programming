@@ -50,6 +50,8 @@ int main(int argc, char **argv)
 	copyVar = read(myFileD, myHeader, sizeof(Elf64_Ehdr));
 	if (copyVar < 0)
 	{
+		free(myHeader);
+		close(myFileD);
 		dprintf(STDERR_FILENO, "Error: Can't read file %s\n", argv[1]);
 		exit(98);
 	}
@@ -165,6 +167,8 @@ void printingData(unsigned char *e_ident)
 		case ELFDATANONE:
 			printf("none\n");
 			break;
+		default:
+			printf("<unknown: %x>\n", e_ident[EI_CLASS]);
 	}
 }
 
@@ -214,7 +218,7 @@ void printingApi(unsigned char *e_ident)
 			printf("UNIX - Linux\n");
 			break;
 		case ELFOSABI_SOLARIS:
-			printf("UNIX - Sun Solaris\n");
+			printf("UNIX - Solaris\n");
 			break;
 		case ELFOSABI_ARM:
 			printf("ARM\n");
