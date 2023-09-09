@@ -191,7 +191,7 @@ void printingVersion(unsigned char *e_ident)
 }
 
 /**
- * printingAbi - A function to check osabi
+ * printingApi - A function to check osabi
  * @e_ident: A Pointer to the bytes of the elf class
  *
  * Return: nothing
@@ -238,7 +238,7 @@ void printingApi(unsigned char *e_ident)
 }
 
 /**
- * printingRealApi - A function to check the api
+ * printingReadApi - A function to check the api
  * @e_ident: A Pointer to the bytes of the elf class
  *
  * Return: nothing
