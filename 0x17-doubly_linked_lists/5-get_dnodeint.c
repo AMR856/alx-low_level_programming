@@ -16,14 +16,15 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 
 	if (head == NULL)
 		return (NULL);
+
 	while (myTempHead != NULL)
 	{
+		if (counter == index)
+			return (myTempHead);
+
 		myTempHead = myTempHead->next;
 		counter++;
-		if (counter == index)
-			break;
 	}
-	if (index > counter)
-		return (NULL);
-	return (myTempHead);
+
+	return (NULL);
 }
