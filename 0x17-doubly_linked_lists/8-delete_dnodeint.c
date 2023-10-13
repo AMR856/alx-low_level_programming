@@ -5,22 +5,24 @@
  * at a specfic index
  * @head: A pointer to a pointer that points to the head
  * @index: Index of the deleted node
- * 
+ *
  * Return: 0 or 1
 */
 
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
 	dlistint_t *myTempHead = *head;
-	unsigned counter = 0;
+	unsigned int counter = 0;
 
 	if (*head == NULL)
 		return (-1);
 	if (index == 0)
 	{
-		myTempHead->next->prev = NULL;
-		myTempHead->prev = NULL;
-		*head = myTempHead->next;
+		if (myTempHead->next != NULL)
+		{
+			myTempHead->next->prev = NULL;
+			*head = myTempHead->next;
+		}
 		free(myTempHead);
 		return (1);
 	}
