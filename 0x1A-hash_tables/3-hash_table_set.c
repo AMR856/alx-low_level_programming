@@ -13,10 +13,13 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int myIndex;
 	hash_node_t *myNewNode = (hash_node_t *)malloc(sizeof(hash_node_t));
+	hash_node_t *current;
 
 	if (ht == NULL)
 		return (0);
 	if (myNewNode == NULL)
+		return (0);
+	if (len(key) == 0)
 		return (0);
 	myNewNode->key = (char *)malloc(strlen(key) + 1);
 	myNewNode->value = (char *)malloc(strlen(value) + 1);
@@ -26,10 +29,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	myIndex = key_index((const unsigned char *)myNewNode->key, ht->size);
 	if (ht->array[myIndex] != NULL)
 	{
-        hash_node_t *current = ht->array[myIndex];
-        while (current->next != NULL)
-            current = current->next;
-        current->next = myNewNode;
+		current = ht->array[myIndex];
+		while (current->next != NULL)
+			current = current->next;
+		current->next = myNewNode;
 		return (1);
 	}
 	ht->array[myIndex] = myNewNode;
