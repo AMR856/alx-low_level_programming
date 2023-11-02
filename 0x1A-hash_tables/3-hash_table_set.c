@@ -19,7 +19,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 	if (myNewNode == NULL)
 		return (0);
-	if (len(key) == 0)
+	if (strlen(key) == 0)
 		return (0);
 	myNewNode->key = (char *)malloc(strlen(key) + 1);
 	myNewNode->value = (char *)malloc(strlen(value) + 1);
