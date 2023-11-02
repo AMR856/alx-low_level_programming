@@ -25,7 +25,13 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	strcpy(myNewNode->key, key);
 	myIndex = key_index((const unsigned char *)myNewNode->key, ht->size);
 	if (ht->array[myIndex] != NULL)
-		myIndex = 0;
+	{
+        hash_node_t *current = ht->array[myIndex];
+        while (current->next != NULL)
+            current = current->next;
+        current->next = myNewNode;
+		return (1);
+	}
 	ht->array[myIndex] = myNewNode;
 	return (1);
 }
