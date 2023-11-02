@@ -75,6 +75,7 @@ hash_node_t *creatingNewNode(const char *key, const char *value)
 }
 
 /**
+ * docs - Just a quick docs for the functions
  * We have three conditions
  * 1- The key doesn't exist before
  * 2- if the key existed with the same key and index
