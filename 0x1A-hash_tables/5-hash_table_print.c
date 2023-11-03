@@ -27,10 +27,9 @@ void hash_table_print(const hash_table_t *ht)
 				myFlag = 0;
 			}
 			current = ht->array[i];
-			printf("\'%s\': ", current->key);
 			while (current != NULL)
 			{
-				printf("\'%s\'", current->value);
+				printf("\'%s\': \'%s\'", current->key, current->value);
 				if (current->next != NULL)
 					printf(" ");
 				current = current->next;
