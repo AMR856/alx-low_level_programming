@@ -25,7 +25,7 @@ int interpolation_search(int *array, size_t size, int value)
 /**
  * interpolation_search_helper - A function to help with searching
  * @myArray: A pointer to the array
- * @low: The low index
+ * @l: The low index
  * @high: The high index
  * @value: The value we're searching for
  * Return: The index or -1
