@@ -1,4 +1,5 @@
-#ifndef __SEARCH_ALGO
+#ifndef __SEARCH_ALGO__
+#define __SEARCH_ALGO__
 #include <stdio.h>
 #include <string.h>
 #include <stdbool.h>
