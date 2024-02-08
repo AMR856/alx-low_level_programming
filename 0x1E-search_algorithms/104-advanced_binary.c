@@ -44,7 +44,7 @@ int binary_search_helper(int *myArray, int theLeft, int theRight, int theKey)
 			printf("%d\n", myArray[i]);
 	}
 
-	while (theLeft <= theRight)
+	if (theLeft <= theRight)
 	{
 		theMid = theLeft + (theRight - theLeft) / 2;
 		if ((theMid == 0 || theKey > myArray[theMid - 1])
